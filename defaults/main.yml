@@ -1,0 +1,20 @@
+---
+dotfiles_repo: 'git@github.com:/egdoc/dotfiles'
+dotfiles_repo_dest: '~/.config/dotfiles'
+dotfiles:
+  - basedir: '~'
+    add_dot: yes
+    files:
+      - vimrc
+      - vim
+      - gvimrc
+      - bash_aliases
+      - bash_profile
+      - bashrc
+      - lftprc
+      - npmrc
+      - pylintrc
+  - basedir: '~/.config'
+    files:
+      - dconf
+

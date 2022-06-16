@@ -1,0 +1,7 @@
+---
+- name: Prepare before test
+  hosts: instance
+  tasks:
+    - name: Make sure git is installed
+      ansible.builtin.package:
+        name: git

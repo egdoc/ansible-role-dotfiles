@@ -1,0 +1,12 @@
+---
+- name: Clone dotfiles
+  become: no
+  ansible.builtin.git:
+    repo: '{{ dotfiles_repo }}'
+    dest: '{{ dotfiles_repo_dest }}'
+    update: yes
+    recursive: yes
+
+- name: Link dotfiles
+  ansible.builtin.include_tasks: link.yml
+  loop: "{{ dotfiles | subelements('files') }}"

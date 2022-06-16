@@ -1,0 +1,27 @@
+---
+- name: Set current item
+  become: no
+  ansible.builtin.set_fact:
+    current_item_src: '{{ dotfiles_repo_dest }}/{{ item.1 }}'
+    current_item_dest: '{{ item.0.basedir }}/{{ "." + item.1 if item.0.add_dot|default(false) else item.1 }}'
+
+- name: 'Get {{ current_item_dest }} info'
+  become: no
+  ansible.builtin.stat:
+    path: '{{ current_item_dest }}'
+  register: result
+
+- name: Remove element if it is a directory
+  become: no
+  ansible.builtin.file:
+    path: '{{ current_item_dest }}'
+    state: absent
+  when: result.stat.isdir is defined and result.stat.isdir
+
+- name: Link '{{ current_item_src }} to {{ current_item_dest }}'
+  become: no
+  ansible.builtin.file:
+    src: '{{ current_item_src }}'
+    dest: '{{ current_item_dest }}'
+    state: link
+    force: yes

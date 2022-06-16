@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-role-dotfiles"
+      include_role:
+        name: "ansible-role-dotfiles"
+      vars:
+        dotfiles_repo: 'https://github.com/egdoc/dotfiles'
