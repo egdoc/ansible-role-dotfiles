@@ -1,0 +1,6 @@
+galaxy_info:
+  author: Egidio Docile
+  description: Download and deploy dotfiles
+  license: GPLv3
+
+dependencies: []
