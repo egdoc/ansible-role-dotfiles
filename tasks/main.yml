@@ -4,6 +4,7 @@
   ansible.builtin.git:
     repo: '{{ dotfiles_repo }}'
     dest: '{{ dotfiles_repo_dest }}'
+    ssh_opts: '-o StrictHostKeyChecking=accept-new'
     update: yes
     recursive: yes
 
