@@ -7,3 +7,19 @@
         name: "ansible-role-dotfiles"
       vars:
         dotfiles_repo: 'https://github.com/egdoc/dotfiles'
+        dotfiles:
+          - basedir: "~"
+            add_dot: true
+            files:
+              - vimrc
+              - vim
+              - gvimrc
+              - bash_aliases
+              - bash_profile
+              - bashrc
+              - lftprc
+              - npmrc
+              - pylintrc
+          - basedir: '~/.config'
+            files:
+              - dconf
