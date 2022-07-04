@@ -7,6 +7,7 @@
     ssh_opts: '-o StrictHostKeyChecking=accept-new'
     update: yes
     recursive: yes
+    force: '{{ discard_changes }}'
 
 - name: Link dotfiles
   ansible.builtin.include_tasks: link.yml

@@ -1,6 +1,7 @@
 ---
 dotfiles_repo: 'git@github.com:/egdoc/dotfiles'
 dotfiles_repo_dest: '~/.config/dotfiles'
+discard_changes: false
 dotfiles:
   - basedir: '~'
     add_dot: yes
