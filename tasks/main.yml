@@ -7,6 +7,7 @@
     ssh_opts: '-o StrictHostKeyChecking=accept-new'
     update: yes
     recursive: yes
+    track_submodules: yes
     force: '{{ discard_changes }}'
 
 - name: Link dotfiles
