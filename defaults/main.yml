@@ -10,3 +10,5 @@ dotfiles_files:
   - .gitignore
   - .inputrc
   - .vimrc
+
+dotfiles_add_dot_prefix: false

@@ -37,6 +37,11 @@ The home directory where dotfiles will be linked. Generally, the default should 
 
 Which files from the dotfiles repository should be linked to the `dotfiles_home`.
 
+    dotfiles_add_dot_prefix: false
+
+Whether to add a dot to dotfiles symbolic links. This is useful if you store your dotfiles without "." prefix in
+your source repository.
+
 ## Dependencies
 
 None
